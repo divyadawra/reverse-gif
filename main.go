@@ -1,16 +1,18 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"image/gif"
 	"os"
 )
 
 func main() {
+	fileName := flag.String("file", "image1.gif", "Name of gif file to return")
 	originalGif := &gif.GIF{}
 	reversedGif := &gif.GIF{}
 	fmt.Println("Starting...")
-	f, err := os.Open("image1.gif")
+	f, err := os.Open(*fileName)
 	if err != nil {
 		fmt.Printf("Error")
 	}
@@ -33,4 +35,5 @@ func main() {
 	f, _ = os.OpenFile("reversed.gif", os.O_WRONLY|os.O_CREATE, 0600)
 	defer f.Close()
 	gif.EncodeAll(f, reversedGif)
+	fmt.Printf("Reversed GIF has been generated\n")
 }
