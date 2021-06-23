@@ -5,10 +5,17 @@ import (
 	"fmt"
 	"image/gif"
 	"os"
+	"path/filepath"
 )
 
 func main() {
-	fileName := flag.String("file", "image1.gif", "Name of gif file to return")
+	fileName := flag.String("file", "image1.png", "Name of gif file")
+	flag.Parse()
+	fileExtension := filepath.Ext(*fileName)
+	if fileExtension != ".gif" {
+		fmt.Println("File extension must be .gif")
+		return
+	}
 	originalGif := &gif.GIF{}
 	reversedGif := &gif.GIF{}
 	fmt.Println("Starting...")
