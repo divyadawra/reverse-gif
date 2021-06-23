@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	fileName := flag.String("file", "image1.png", "Name of gif file")
+	fileName := flag.String("file", "image1.gif", "Name of gif file")
 	flag.Parse()
 	fileExtension := filepath.Ext(*fileName)
 	if fileExtension != ".gif" {
