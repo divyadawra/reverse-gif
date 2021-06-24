@@ -11,3 +11,7 @@ API to reverse the given GIF file
 3. This will generate a file named "reversed.gif" in the working directory.
 
 ```
+## Example
+![Original Gif][https://github.com/divyadawra/reverse-gif/blob/master/original.gif]
+
+![Reversed Gif][https://github.com/divyadawra/reverse-gif/blob/master/reversed.gif]
