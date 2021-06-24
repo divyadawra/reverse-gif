@@ -13,7 +13,9 @@ API to reverse the given GIF file
 ```
 ## Example
 Original GIF
+
 ![Original Gif](https://github.com/divyadawra/reverse-gif/blob/master/original.gif)
 
 Reversed GIF
+
 ![Reversed Gif](https://github.com/divyadawra/reverse-gif/blob/master/reversed.gif)
