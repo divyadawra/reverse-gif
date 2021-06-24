@@ -21,7 +21,8 @@ func main() {
 	fmt.Println("Starting...")
 	f, err := os.Open(*fileName)
 	if err != nil {
-		fmt.Printf("Error")
+		fmt.Println("Error")
+		return
 	}
 	originalGif, _ = gif.DecodeAll(f)
 
@@ -31,14 +32,7 @@ func main() {
 		reversedGif.Image = append(reversedGif.Image, images[i])
 		reversedGif.Delay = append(reversedGif.Delay, delay[i])
 	}
-	// for i, image := range reversedGif.Image {
-	// 	iamgeName := strconv.Itoa(i) + ".gif"
-	// 	f, _ := os.Create(iamgeName)
-	// 	opt := gif.Options{
-	// 		NumColors: 256,
-	// 	}
-	// 	gif.Encode(f, image, &opt)
-	// }
+	
 	f, _ = os.OpenFile("reversed.gif", os.O_WRONLY|os.O_CREATE, 0600)
 	defer f.Close()
 	gif.EncodeAll(f, reversedGif)
